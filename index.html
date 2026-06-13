@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Fazendinha: O Reino das Plantas!</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <a href="#conteudo-principal" class="sr-only">Pular para o conteúdo principal</a>
+
+    <div class="accessibility-bar" role="toolbar" aria-label="Ferramentas de Acessibilidade">
+        <button id="btn-contrast" aria-label="Alternar Alto Contraste">Alto Contraste</button>
+        <button id="btn-font-decrease" aria-label="Diminuir tamanho do texto">A-</button>
+        <button id="btn-font-increase" aria-label="Aumentar tamanho do texto">A+</button>
+    </div>
+
+    <header role="banner">
+        <div class="header-container">
+            <div class="logo" aria-hidden="true">🌱 Super Fazendinha</div>
+            <nav role="navigation" aria-label="Menu Principal">
+                <ul>
+                    <li><a href="#ciclo-vida">Ciclo da Vida</a></li>
+                    <li><a href="#jogo-fazenda">Jogar</a></li>
+                    <li><a href="#importancia">Nossa Agricultura</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-principal" role="main">
+        
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-content scroll-reveal active">
+                <h1 id="hero-title">Descubra a Magia que Vem da Terra!</h1>
+                <p>Você sabia que a comida no seu prato começa com uma sementinha dançante? Venha explorar o mundo da agricultura de um jeito super divertido!</p>
+                <a href="#jogo-fazenda" class="btn-cta">Ir para o Jogo!</a>
+            </div>
+        </section>
+
+        <section id="ciclo-vida" class="section-padding" aria-labelledby="ciclo-title">
+            <div class="container scroll-reveal">
+                <h2 id="ciclo-title" class="section-title">O Incrível Ciclo de Vida das Plantinhas</h2>
+                <p class="section-subtitle">Use as setas para ver como uma semente vira um super alimento!</p>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track-container">
+                        <ul class="carousel-track" id="carousel-track" role="region" aria-live="polite">
+                            <li class="carousel-slide">Carregando o ciclo da sementinha...</li>
+                        </ul>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn" id="btn-prev" aria-label="Slide anterior">⬅</button>
+                        <button class="carousel-btn" id="btn-next" aria-label="Próximo slide">➡</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="jogo-fazenda" class="section-padding bg-alt" aria-labelledby="game-title">
+            <div class="container scroll-reveal">
+                <h2 id="game-title" class="section-title">🎮 Mini-Herói da Terra: Faça Crescer!</h2>
+                <p class="section-subtitle">Clique nas ferramentas corretas na ordem certa para ver a mágica acontecer!</p>
+                
+                <div class="game-box" role="region" aria-label="Jogo Interativo de Jardinagem">
+                    <div class="game-stage">
+                        <div id="plant-display" class="plant-display" aria-live="polite">🕳️</div>
+                        <div id="game-status-text" class="game-status-text">O canteiro está vazio! Qual é o primeiro passo para plantar?</div>
+                    </div>
+                    
+                    <div class="game-actions">
+                        <button class="game-btn" data-action="preparar" aria-label="Preparar a Terra com a Enxada">
+                            <span>⛏️</span><span>Preparar Terra</span>
+                        </button>
+                        <button class="game-btn" data-action="plantar" aria-label="Plantar a Semente">
+                            <span>🌱</span><span>Plantar</span>
+                        </button>
+                        <button class="game-btn" data-action="regar" aria-label="Regar com Água">
+                            <span>💧</span><span>Regar</span>
+                        </button>
+                        <button class="game-btn" data-action="adubar" aria-label="Dar Luz do Sol">
+                            <span>☀️</span><span>Dar Sol</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="importancia" class="section-padding" aria-labelledby="import-title">
+            <div class="container scroll-reveal">
+                <h2 id="import-title" class="section-title">A Força da Nossa Terra 🇧🇷</h2>
+                <p class="section-subtitle">O Brasil é um super-herói na produção de alimentos. Olha só o que vem das nossas fazendas:</p>
+                <div class="grid-cards" id="grid-importancia">
+                    </div>
+            </div>
+        </section>
+
+        <section id="curiosidades" class="section-padding bg-alt" aria-labelledby="curiosidades-title">
+            <div class="container scroll-reveal">
+                <h2 id="curiosidades-title" class="section-title">Perguntas Divertidas</h2>
+                <div class="accordion" id="accordion-curiosidades">
+                    </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2026 Super Fazendinha. Cultivando conhecimento de forma acessível e lúdica.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
