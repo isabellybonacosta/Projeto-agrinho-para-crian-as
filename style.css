@@ -1,0 +1,186 @@
+/* ==========================================
+   1. VARIÁVEIS DO DESIGN SYSTEM (EDITÁVEL)
+   ========================================== */
+:root {
+    /* Paleta de Cores Infantil */
+    --color-primary: #4CAF50;       /* Verde Dinâmico */
+    --color-primary-hover: #388E3C;
+    --color-secondary: #FF9800;     /* Laranja Alerta/Ação */
+    --color-game-bg: #E3F2FD;       /* Azul Céu Suave */
+    --color-bg-light: #F4FBF4;      /* Fundo Geral */
+    --color-bg-alt: #FFFDE7;        /* Fundo Alternado */
+    --color-text: #2E3D30;
+    --color-white: #FFFFFF;
+    
+    /* Configurações de Layout */
+    --radius-lg: 24px;              /* Bordas redondinhas amigáveis */
+    --radius-md: 12px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    --font-base: 100%;
+    
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================
+   2. DIRETRIZ DE ALTO CONTRASTE
+   ========================================== */
+body.high-contrast {
+    --color-primary: #000000;
+    --color-secondary: #FFFF00;
+    --color-game-bg: #121212;
+    --color-bg-light: #000000;
+    --color-bg-alt: #121212;
+    --color-text: #FFFFFF;
+    --color-white: #000000;
+}
+body.high-contrast .card, 
+body.high-contrast header, 
+body.high-contrast footer,
+body.high-contrast .carousel-track-container,
+body.high-contrast .accordion-item,
+body.high-contrast .game-box {
+    border: 2px solid #FFFFFF !important;
+    background: #000000 !important;
+}
+body.high-contrast .carousel-btn,
+body.high-contrast .btn-cta,
+body.high-contrast .game-btn {
+    background: #FFFF00 !important;
+    color: #000000 !important;
+    border: 2px solid #FFFFFF;
+}
+
+/* ==========================================
+   3. ESTILOS BASE E RESETS
+   ========================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: var(--font-base); }
+body { font-family: 'Comic Sans MS', 'Arial', sans-serif; background-color: var(--color-bg-light); color: var(--color-text); line-height: 1.6; }
+.container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 var(--spacing-md); }
+.section-padding { padding: var(--spacing-lg) 0; }
+.bg-alt { background-color: var(--color-bg-alt); }
+.section-title { font-size: 2.2rem; text-align: center; color: var(--color-primary); margin-bottom: var(--spacing-sm); }
+.section-subtitle { font-size: 1.2rem; text-align: center; margin-bottom: var(--spacing-lg); }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+
+/* Barra de Acessibilidade */
+.accessibility-bar { background: #222; padding: 8px var(--spacing-md); display: flex; justify-content: flex-end; gap: var(--spacing-sm); }
+.accessibility-bar button { background: #FFF; border: none; padding: 5px 12px; cursor: pointer; font-weight: bold; border-radius: 4px; }
+
+/* Header e Menu */
+header { background-color: var(--color-white); box-shadow: 0 4px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+.header-container { display: flex; flex-direction: column; align-items: center; padding: var(--spacing-sm) var(--spacing-md); gap: var(--spacing-sm); }
+.logo { font-size: 1.6rem; font-weight: bold; color: var(--color-primary); }
+nav ul { display: flex; list-style: none; gap: var(--spacing-md); }
+nav a { text-decoration: none; color: var(--color-text); font-weight: bold; }
+
+/* Hero */
+.hero-section { background: linear-gradient(135deg, #E8F5E9 0%, #FFF3E0 100%); padding: var(--spacing-lg) var(--spacing-md); text-align: center; border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+.hero-content h1 { font-size: 2.4rem; color: var(--color-primary); margin-bottom: var(--spacing-md); }
+.hero-content p { font-size: 1.2rem; max-width: 600px; margin: 0 auto var(--spacing-lg); }
+.btn-cta { display: inline-block; background-color: var(--color-secondary); color: white; padding: 14px 28px; font-size: 1.2rem; font-weight: bold; text-decoration: none; border-radius: var(--radius-lg); box-shadow: 0 5px 0 #E65100; }
+
+/* ==========================================
+   4. ESTILIZAÇÃO DO MINI-GAME
+   ========================================== */
+.game-box {
+    background-color: var(--color-game-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 0 auto;
+}
+.game-stage {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.plant-display {
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: var(--spacing-sm);
+    transition: transform 0.3s ease;
+}
+.game-status-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-text);
+    min-height: 2.4rem;
+}
+.game-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+.game-btn {
+    background-color: var(--color-white);
+    border: 3px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.1s, background-color 0.2s;
+}
+.game-btn:hover { background-color: #E8F5E9; }
+.game-btn:active { transform: scale(0.95); }
+.game-btn span:first-child { font-size: 2rem; }
+
+/* ==========================================
+   5. COMPONENTES ADICIONAIS (CARROSSEL, GRID, ABAS)
+   ========================================== */
+/* Carrossel */
+.carousel-container { position: relative; max-width: 500px; margin: 0 auto; }
+.carousel-track-container { overflow: hidden; border-radius: var(--radius-lg); background: var(--color-white); box-shadow: 0 6px 15px rgba(0,0,0,0.05); }
+.carousel-track { display: flex; list-style: none; transition: transform 0.4s ease; }
+.carousel-slide { min-width: 100%; padding: var(--spacing-lg); text-align: center; }
+.slide-icon { font-size: 3.5rem; margin-bottom: var(--spacing-sm); }
+.carousel-controls { display: flex; justify-content: space-between; margin-top: var(--spacing-sm); }
+.carousel-btn { background: var(--color-primary); border: none; color: white; width: 45px; height: 45px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; }
+
+/* Grid Customizável - Mobile First */
+.grid-cards { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: var(--spacing-md); 
+}
+.card { background: var(--color-white); padding: var(--spacing-md); border-radius: var(--radius-md); box-shadow: 0 4px 10px rgba(0,0,0,0.02); text-align: center; border-bottom: 5px solid var(--color-primary); }
+.card-icon { font-size: 2.8rem; margin-bottom: var(--spacing-sm); }
+
+/* Acordeão */
+.accordion-item { background: var(--color-white); margin-bottom: var(--spacing-sm); border-radius: var(--radius-md); overflow: hidden; }
+.accordion-trigger { width: 100%; background: none; border: none; padding: var(--spacing-md); text-align: left; font-size: 1.1rem; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; }
+.accordion-panel { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 var(--spacing-md); }
+.accordion-panel p { padding-bottom: var(--spacing-md); }
+
+/* Animações Scroll Reveal */
+.scroll-reveal { opacity: 0; transform: translateY(25px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.scroll-reveal.active { opacity: 1; transform: translateY(0); }
+
+footer { background-color: var(--color-primary); color: white; text-align: center; padding: var(--spacing-md) 0; margin-top: 30px; }
+
+/* ==========================================
+   6. TELAS MAIORES (MEDIA QUERIES)
+   ========================================== */
+@media (min-width: 768px) {
+    .header-container { flex-direction: row; justify-content: space-between; }
+    .hero-content h1 { font-size: 3.2rem; }
+    /* Ajuste de colunas do grid para desktop */
+    .grid-cards { grid-template-columns: repeat(3, 1fr); }
+}
